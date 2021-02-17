@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// 路由懒加载
 const Home = () => import ('../views/home/Home.vue')
 const Category = () => import ('../views/category/Category.vue')
 const ShopCart = () => import ('../views/shopcart/ShopCart.vue')
 const Profile = () => import ('../views/profile/Profile.vue')
+const Detail = () => import ('../views/detail/Detail.vue')
 
 Vue.use(VueRouter)
 
@@ -28,10 +30,14 @@ const routes = [{
     path: '/profile',
     component: Profile
   },
+  {
+    path: '/detail/:id',
+    component: Detail
+  }
 ]
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   routes
 })
 

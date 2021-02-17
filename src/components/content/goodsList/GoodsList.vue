@@ -10,7 +10,7 @@
     components: {
       GoodsListItem
     },
-    props: {
+    props: { //从Home.vue传过来的数据保存
       goods: {
         type: Array,
         default: []
